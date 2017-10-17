@@ -1,6 +1,6 @@
 # Neural_network_Keras
-# Neural Network Implemented Using Keras
-# Project is incomplete
+Neural Network Implemented Using Keras
+*Project is incomplete
 -> Need description
 -> tutorial file explaining everything
 -> comments have to be added
