@@ -44,7 +44,6 @@ le.fit(Y)
 enc_Y = le.transform(Y)
 
 # Evaluate Model with Standardized Dataset
-np.random.seed(seed)
 est = []
 est.append(('standardize', StandardScaler()))
 est.append(('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0)))
