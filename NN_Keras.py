@@ -45,9 +45,14 @@ np.random.seed(seed)
 est = []
 est.append(('standardize', StandardScaler()))
 est.append(('mlp', KerasClassifier(build_fn=create_baseline, epochs=100, batch_size=5, verbose=0)))
-pipeline = Pipeline(est)
-kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
-results = cross_val_score(pipeline, X, enc_Y, cv=kfold)
-print("Standardized: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
-# Accuracy 84.09%
 
+# Pipeling both standardization and model into one
+pipeline = Pipeline(est)
+
+# Generating cross validation splitting generator
+kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=seed)
+
+# calculating accuracy
+results = cross_val_score(pipeline, X, enc_Y, cv=kfold)
+print("Standardized Results: %.2f%% (%.2f%%)" % (results.mean() * 100, results.std() * 100))
+# Accuracy 84.09%
