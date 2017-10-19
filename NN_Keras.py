@@ -1,3 +1,6 @@
+# Proper Explanation and of each line and information about each dependency is in Description file.
+# Please read this code along with Description file. :)
+
 import numpy as np
 import pandas as pd
 from keras.models import Sequential
